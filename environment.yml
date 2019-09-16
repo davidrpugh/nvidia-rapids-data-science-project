@@ -14,3 +14,4 @@ dependencies:
   - cuml=0.9
   - jupyterlab=1.0
   - python=3.6
+  - py-xgboost-gpu=0.90
