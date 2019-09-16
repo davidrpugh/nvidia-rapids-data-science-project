@@ -1,0 +1,8 @@
+name: null
+
+channels:
+  - defaults
+
+dependencies:
+  - python=3.6
+  - jupyterlab=1.0
