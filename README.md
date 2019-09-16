@@ -51,6 +51,14 @@ already been created, then you can update the environment with the following com
 $ conda env update --prefix ./env --file environment.yml --prune
 ```
 
+### Listing the full contents of the Conda environment
+
+The list of explicit dependencies for the project are listed in the `environment.yml` file. To see the full list of packages installed into the environment run the following command.
+
+```bash
+conda list --prefix ./env
+```
+
 ## Using Docker
 
 In order to build Docker images for your project and run containers with GPU acceleration you will 
