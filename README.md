@@ -21,7 +21,7 @@ Project organization is based on ideas from [_Good Enough Practices for Scientif
 9. Put project source code in the `src` directory.
 10. Name all files to reflect their content or function.
 
-## Conda environments
+## Using Conda
 
 ### Creating the Conda environment
 
