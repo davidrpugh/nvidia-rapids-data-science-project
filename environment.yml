@@ -13,5 +13,6 @@ dependencies:
   - cugraph=0.9
   - cuml=0.9
   - jupyterlab=1.0
+  - matplotlib=3.1
   - python=3.6
   - py-xgboost-gpu=0.90
