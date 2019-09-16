@@ -1,8 +1,16 @@
 name: null
 
 channels:
+  - rapidsai
+  - nvidia
+  - numba
+  - conda-forge
   - defaults
 
 dependencies:
-  - python=3.6
+  - cudatoolkit=10.0
+  - cudf=0.9
+  - cugraph=0.9
+  - cuml=0.9
   - jupyterlab=1.0
+  - python=3.6
