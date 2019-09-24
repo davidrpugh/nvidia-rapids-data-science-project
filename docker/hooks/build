@@ -1,0 +1,9 @@
+#!/bin/bash
+set -ex
+
+docker image build \
+    --build-arg environment=environment.yml \
+    --build-arg entrypoint=docker/entrypoint.sh \
+    --tag "$DOCKER_REPO:latest" \
+    --target "latest" \
+    .
