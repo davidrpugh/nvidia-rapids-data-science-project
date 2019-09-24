@@ -1,6 +1,6 @@
 ## Building the Docker image
 
-The following command builds a Docker image with a particular `$IMAGE_NAME` and `$IMAGE_TAG` using the `Dockerfile`. Note that the `Dockerfile` uses the `environment.yml` file in the project root directory to create a Conda environment inside the image.
+The following command builds a Docker image with a particular `$IMAGE_NAME` and `$IMAGE_TAG` using the `Dockerfile`. Note that the `Dockerfile` uses the `environment.yml` file in the project root directory to create a Conda environment inside the image. This command should be run within the `docker` sub-directory of the project.
 
 ```bash
 $ docker build \
@@ -9,25 +9,25 @@ $ docker build \
   --build-arg gid=$GID \
   --build-arg environment=environment.yml \
   --build-arg entrypoint=docker/entrypoint.sh \
-  --file docker/Dockerfile \
+  --file Dockerfile \
   --tag $IMAGE_NAME:$IMAGE_TAG \
   ../
 ```
 
 ## Running the Docker image
 
-Once you have built the image, the following command will run a container based on the image `$IMAGE_NAME:$IMAGE_TAG`.
+Once you have built the image, the following command will run a container based on the image `$IMAGE_NAME:$IMAGE_TAG`. This command should be run from within the project's root directory.
 
 ```bash
 $ docker container run \
   --rm \
   --tty \
-  --volume ../bin:/home/$USER/app/bin \
-  --volume ../data:/home/$USER/app/data \ 
-  --volume ../doc:/home/$USER/app/doc \
-  --volume ../notebooks:/home/$USER/app/notebooks \
-  --volume ../results:/home/$USER/app/results \
-  --volume ../src:/home/$USER/app/src \
+  --volume ${pwd}/bin:/home/$USER/app/bin \
+  --volume ${pwd}/data:/home/$USER/app/data \ 
+  --volume ${pwd}/doc:/home/$USER/app/doc \
+  --volume ${pwd}/notebooks:/home/$USER/app/notebooks \
+  --volume ${pwd}/results:/home/$USER/app/results \
+  --volume ${pwd}/src:/home/$USER/app/src \
   --runtime nvidia \
   --publish 8888:8888 \
   $IMAGE_NAME:$IMAGE_TAG
