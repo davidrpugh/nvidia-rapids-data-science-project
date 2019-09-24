@@ -5,5 +5,5 @@ docker image build \
     --build-arg environment=environment.yml \
     --build-arg entrypoint=docker/entrypoint.sh \
     --tag "$DOCKER_REPO:latest" \
-    --file docker/Dockerfile \
+    --file Dockerfile \
     ../
