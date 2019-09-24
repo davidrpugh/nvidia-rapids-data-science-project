@@ -1,9 +1,9 @@
 #!/bin/bash
 set -ex
 
-echo $PWD
+ls ..
 docker image build \
-    --build-arg environment=environment.yml \
-    --build-arg entrypoint=docker/entrypoint.sh \
+    --build-arg environment=../environment.yml \
+    --build-arg entrypoint=entrypoint.sh \
     --tag "$DOCKER_REPO:latest" \
     .
