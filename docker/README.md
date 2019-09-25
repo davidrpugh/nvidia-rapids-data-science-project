@@ -72,7 +72,7 @@ $ docker container run \
 
 ### Using Docker Compose
 
-It is quite easy to make a typo whilst writing the above docker commands by hand, a less error-prone approach is to use [Docker Compose](https://docs.docker.com/compose/). The above docker commands have been encapsulated into the `docker-compose.yml` configuration file and your project specific values for `$USER`, `$UID`, and `$GID` can be stored in an `.env` file as follows. 
+It is quite easy to make a typo whilst writing the above docker commands by hand, a less error-prone approach is to use [Docker Compose](https://docs.docker.com/compose/). The above docker commands have been encapsulated into the `docker-compose.yml` configuration file. You will need to store your project specific values for `$USER`, `$UID`, and `$GID` in an a file called `.env` as follows. 
 
 ```
 USER=$USER
@@ -80,7 +80,9 @@ UID=$UID
 GID=$GID
 ```
 
-Once you have created the `.env` file then you can test your `docker-compose.yml` file by running the following command in the `docker` sub-directory of the project.
+For more details on how variable substitution works with Docker Compose, see the [official documentation](https://docs.docker.com/compose/environment-variables/#the-env-file).
+
+Note that you can test your `docker-compose.yml` file by running the following command in the `docker` sub-directory of the project.
 
 ```bash
 $ docker-compose config
