@@ -22,7 +22,7 @@ $ docker container run \
 If you wish to add (remove) dependencies in your project's `environment.yml` (or if you wish to have a custom user defined inside the image), then you will need to build a new Docker image for you project. The following command builds a new image for your project with a custom `$USER` (with associated `$UID` and `$GID$`) as well as a particular `$IMAGE_NAME` and `$IMAGE_TAG`. This command should be run within the `docker` sub-directory of the project.
 
 ```bash
-$ docker build \
+$ docker image build \
   --build-arg username=$USER \
   --build-arg uid=$UID \
   --build-arg gid=$GID \
