@@ -42,7 +42,8 @@ $ docker build \
    2. Select "Click here to customize build settings" and specify the location of the Dockerfile for your build as `docker/Dockerfile`.
    3. Give the DockerHub repository the same name as your project's GitHub repository.
    4. Give the DockerHub repository a brief descrition (something like "Automated builds for $PROJECT" or similar).
-   4. Click the "Create and Build" button.
+   5. Click the "Create and Build" button.
+4. Edit the `hooks/build` script with your project's `$USER`, `$UID`, and `$GID` build args in place of the corresponding default values.
 
 Below is a screenshot which should give you an idea of how the form out to be filled out prior to clicking "Create and Build".
 
