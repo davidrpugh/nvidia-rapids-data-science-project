@@ -48,7 +48,7 @@ Below is a screenshot which should give you an idea of how the form out to be fi
 
 ![Creating a new DockerHub repository for your project](./img/creating-dockerhub-repo-screenshot.png)
 
-DockerHub is now configured to re-build your project's Docker image whenever new commits are pushed to your GitHub repository! Whenever you push new commits to your project's GitHub repository, GitHub will notify DockerHub and DockerHub will then run the `hooks/build` script to re-build your project's Docker image. For more details on the whole process see the [official documentation](https://docs.docker.com/docker-hub/builds/advanced/#build-hook-examples) on advanced DockerHub build options.
+DockerHub is now configured to re-build your project's image whenever commits are pushed to your project's GitHub repository! Specifically, whenever you push new commits to your project's GitHub repository, GitHub will notify DockerHub and DockerHub will then run the `./hooks/build` script to re-build your project's image. For more details on the whole process see the [official documentation](https://docs.docker.com/docker-hub/builds/advanced/#build-hook-examples) on advanced DockerHub build options.
 
 ## Running a Docker container
 
