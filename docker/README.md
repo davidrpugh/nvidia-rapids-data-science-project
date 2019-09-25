@@ -72,13 +72,31 @@ $ docker container run \
 
 ### Using Docker Compose
 
-It is quite easy to make a typo whilst writing the above docker commands by hand, a less error-prone approach is to use [Docker Compose](https://docs.docker.com/compose/). The above docker commands have been encapsulated into the `docker-compose.yml` configuration file and the following command can be used to bring up a container based on our image.
+It is quite easy to make a typo whilst writing the above docker commands by hand, a less error-prone approach is to use [Docker Compose](https://docs.docker.com/compose/). The above docker commands have been encapsulated into the `docker-compose.yml` configuration file. You will need to store your project specific values for `$USER`, `$UID`, and `$GID` in an a file called `.env` as follows. 
+
+```
+USER=$USER
+UID=$UID
+GID=$GID
+```
+
+For more details on how variable substitution works with Docker Compose, see the [official documentation](https://docs.docker.com/compose/environment-variables/#the-env-file).
+
+Note that you can test your `docker-compose.yml` file by running the following command in the `docker` sub-directory of the project.
+
+```bash
+$ docker-compose config
+```
+
+This command takes the `docker-compose.yml` file and substitutes the values provided in the `.env` file and then returns the result.
+
+Once you are confident that values in the `.env` file are being substituted properly into the `docker-compose.yml` file, the following command can be used to bring up a container based on your project's Docker image and launch the JupyterLab server. This command should also be run from within the `docker` sub-directory of the project.
 
 ```bash
 $ docker-compose up --build
 ```
 
-When you are done developing, the following command tears down the networking infrastructure for the running container.
+When you are done developing and have shutdown the JupyterLab server, the following command tears down the networking infrastructure for the running container.
 
 ```bash
 $ docker-compose down
