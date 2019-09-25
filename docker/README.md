@@ -35,7 +35,7 @@ $ docker build \
 
 ### Automating the build process with DockerHub
 
-1. Create a new (or login to your existing) DockerHub account.
+1. Create a new (or login to your existing) [DockerHub](https://hub.docker.com) account.
 2. [Link your GitHub account with your DockerHub account](https://docs.docker.com/docker-hub/builds/link-source/) (if you have not already done so).
 3. Create a new DockerHub repository.
    1. Under "Build Settings" click the GitHub logo and then select your project's GitHub repository.
