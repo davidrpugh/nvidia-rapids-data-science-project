@@ -41,7 +41,7 @@ It is quite easy to make a typo whilst writing the above docker commands by hand
 $ docker-compose up --build
 ```
 
-When you are done developing, the following command tears down the networking inrastructure for the running container.
+When you are done developing, the following command tears down the networking infrastructure for the running container.
 
 ```bash
 $ docker-compose down
