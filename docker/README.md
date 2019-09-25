@@ -50,7 +50,7 @@ Below is a screenshot which should give you an idea of how the form out to be fi
 
 DockerHub is now configured to re-build your project's image whenever commits are pushed to your project's GitHub repository! Specifically, whenever you push new commits to your project's GitHub repository, GitHub will notify DockerHub and DockerHub will then run the `./hooks/build` script to re-build your project's image. For more details on the whole process see the [official documentation](https://docs.docker.com/docker-hub/builds/advanced/#build-hook-examples) on advanced DockerHub build options.
 
-### Running a Docker container
+### Running a container
 
 Once you have built the image, the following command will run a container based on the image `$IMAGE_NAME:$IMAGE_TAG`. This command should be run from within the project's root directory.
 
