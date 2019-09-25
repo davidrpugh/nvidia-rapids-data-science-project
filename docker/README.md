@@ -1,6 +1,6 @@
 ## Using the `kaustvl/nvidia-rapids-data-science-project` image
 
-If you are not adding any additional dependencies to your project's `environment.yml` file, then you can run Docker containers for your project based on the `kaustvl/nvidia-data-science-project` Docker image hosted on DockerHub. Run the following command within your project's root directory to run containers for your project based on the existing Docker image.
+If you are not adding any additional dependencies to your project's `environment.yml` file, then you can run containers for your project based on the `kaustvl/nvidia-data-science-project` image hosted on DockerHub. Run the following command within your project's root directory to run containers for your project based on this existing Docker image.
 
 ```bash
 $ docker container run \
@@ -19,7 +19,7 @@ $ docker container run \
 
 ## Building a new image for your project
 
-If you wish to add (remove) dependencies in your project's `environment.yml` (or if you wish to have a custom user defined inside the image), then you will need to build a new Docker image for you project. The following command builds a Docker image for your project with a particular `$IMAGE_NAME` and `$IMAGE_TAG` using the `Dockerfile`. This command should be run within the `docker` sub-directory of the project.
+If you wish to add (remove) dependencies in your project's `environment.yml` (or if you wish to have a custom user defined inside the image), then you will need to build a new Docker image for you project. The following command builds a new image for your project with a custom `$USER` (with associated `$UID` and `$GID$) as well as a particular `$IMAGE_NAME` and `$IMAGE_TAG`. This command should be run within the `docker` sub-directory of the project.
 
 ```bash
 $ docker build \
