@@ -1,4 +1,4 @@
-## Using the 'kaustvl/nvidia-rapids-data-science-project` Docker image
+## Using the `kaustvl/nvidia-rapids-data-science-project` Docker image
 
 If you are not adding any additional dependencies to your project's `environment.yml` file, then you can run Docker containers for your project based on the `kaustvl/nvidia-data-science-project` Docker image hosted on DockerHub. Run the following command within your project's root directory to run containers for your project based on the existing Docker image.
 
