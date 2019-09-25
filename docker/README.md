@@ -1,4 +1,4 @@
-## Using the `kaustvl/nvidia-rapids-data-science-project` Docker image
+## Using the `kaustvl/nvidia-rapids-data-science-project` image
 
 If you are not adding any additional dependencies to your project's `environment.yml` file, then you can run Docker containers for your project based on the `kaustvl/nvidia-data-science-project` Docker image hosted on DockerHub. Run the following command within your project's root directory to run containers for your project based on the existing Docker image.
 
@@ -17,7 +17,7 @@ $ docker container run \
   kaustvl/nvidia-rapids-data-science-project:latest
 ```
 
-## Building a new Docker image for your project
+## Building a new image for your project
 
 If you wish to add (remove) dependencies in your project's `environment.yml` (or if you wish to have a custom user defined inside the image), then you will need to build a new Docker image for you project. The following command builds a Docker image for your project with a particular `$IMAGE_NAME` and `$IMAGE_TAG` using the `Dockerfile`. This command should be run within the `docker` sub-directory of the project.
 
@@ -36,14 +36,15 @@ $ docker build \
 ### Automating the build process with DockerHub
 
 1. Create a new (or login to your existing) DockerHub account.
-2. [Link your GitHub account with your DockerHub account](https://docs.docker.com/docker-hub/builds/link-source/) (if your GitHub and DockerHub accounts have not already been linked).
+2. [Link your GitHub account with your DockerHub account](https://docs.docker.com/docker-hub/builds/link-source/) (if you have not already done so).
 3. Create a new DockerHub repository.
    1. Under "Build Settings" click the GitHub logo and then select your project's GitHub repository.
-   2. Select "Click here to customize build settings" and specify the location of the Dockerfile for your build as `docker/Dockefile`.
+   2. Select "Click here to customize build settings" and specify the location of the Dockerfile for your build as `docker/Dockerfile`.
    3. Give the DockerHub repository the same name as your project's GitHub repository.
+   4. Give the DockerHub repository a brief descrition (something like "Automated builds for $PROJECT" or similar).
    4. Click the "Create and Build" button.
 
-Below is a screenshot which should give you an idead of how the form out to be filled out prior to clicking "Create and Build".
+Below is a screenshot which should give you an idea of how the form out to be filled out prior to clicking "Create and Build".
 
 ![Creating a new DockerHub repository for your project](./img/creating-dockerhub-repo-screenshot.png)
 
