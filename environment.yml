@@ -4,15 +4,10 @@ channels:
   - rapidsai
   - nvidia
   - numba
-  - blazingsql
   - conda-forge
   - defaults
 
 dependencies:
-  - blazingsql-calcite=0.4.3 
-  - blazingsql-orchestrator=0.4.3 
-  - blazingsql-ral=0.4.3
-  - blazingsql-python=0.4.3
   - cudatoolkit=10.0
   - cudf=0.9
   - cugraph=0.9
