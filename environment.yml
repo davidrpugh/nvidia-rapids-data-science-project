@@ -3,16 +3,18 @@ name: null
 channels:
   - rapidsai
   - nvidia
-  - numba
+  - blazingsql
   - conda-forge
   - defaults
 
 dependencies:
+  - blazingsql-calcite=0.4.5 
+  - blazingsql-orchestrator=0.4.5 
+  - blazingsql-ral=0.4.5
+  - blazingsql-python=0.4.5
   - cudatoolkit=10.0
-  - cudf=0.9
-  - cugraph=0.9
-  - cuml=0.9
-  - jupyterlab=1.0
+  - jupyterlab=1.1
   - matplotlib=3.1
   - python=3.7
-  - py-xgboost-gpu=0.90
+  - python-flatbuffers=1.11
+  - rapids=0.10
