@@ -11,6 +11,8 @@ services:
       dockerfile: docker/Dockerfile
     ports:
       - "8888:8888"
+      - "8787:8787"
+      - "8786:8786"
     runtime: nvidia
     volumes:
       - ../bin:/home/${USER}/app/bin
