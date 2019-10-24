@@ -3,6 +3,7 @@ name: null
 channels:
   - rapidsai
   - nvidia
+  - blazingsql/label/cuda10.0
   - blazingsql
   - conda-forge
   - defaults
