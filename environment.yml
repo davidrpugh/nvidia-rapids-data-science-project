@@ -9,10 +9,10 @@ channels:
   - defaults
 
 dependencies:
-  - blazingsql-calcite=0.4.5 
-  - blazingsql-orchestrator=0.4.5 
-  - blazingsql-ral=0.4.5
-  - blazingsql-python=0.4.5
+  - blazingsql-calcite=0.4.6 
+  - blazingsql-orchestrator=0.4.6 
+  - blazingsql-ral=0.4.6
+  - blazingsql-python=0.4.6
   - cudatoolkit=10.0
   - jupyterlab=1.1
   - matplotlib=3.1
