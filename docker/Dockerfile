@@ -1,4 +1,4 @@
-FROM rapidsai/rapidsai:cuda10.1-runtime-ubuntu16.04
+FROM rapidsai/rapidsai:cuda10.0-base-ubuntu16.04
 
 LABEL maintainer="pughdr <david.pugh@kaust.edu.sa>"
 
