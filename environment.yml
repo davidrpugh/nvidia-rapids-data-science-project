@@ -9,7 +9,11 @@ channels:
 
 dependencies:
   - datashader=0.9
-  - jupyterlab=1.1
+  - jupyterlab=1.2
   - matplotlib=3.1
+  - nodejs=12.13
+  - pip=19.3
+  - pip:
+    - jupyterlab-nvdashboard==0.1.*
   - python=3.7
-  - rapids=0.10
+  - rapids=0.11
