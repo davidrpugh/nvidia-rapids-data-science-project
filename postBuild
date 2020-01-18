@@ -1,4 +1,4 @@
-#!/bin/bash
-
+jupyter labextension install --no-build dask-labextension  # client-side component; server-side installed via conda/pip
 jupyter labextension install --no-build jupyterlab-nvdashboard  # client-side component; server-side installed via conda/pip
+jupyter serverextension enable jupyterlab_sql --py --sys-prefix
 jupyter lab build
