@@ -3,7 +3,6 @@ name: null
 channels:
   - rapidsai
   - nvidia
-  - pyviz
   - conda-forge
   - defaults
 
@@ -14,6 +13,6 @@ dependencies:
   - nodejs=12.13
   - pip=19.3
   - pip:
-    - jupyterlab-nvdashboard==0.1.*
+    - -r file:requirements.txt
   - python=3.7
   - rapids=0.11

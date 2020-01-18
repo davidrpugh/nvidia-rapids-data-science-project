@@ -1,0 +1,1 @@
+jupyterlab-nvdashboard==0.1.*
