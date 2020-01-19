@@ -9,13 +9,16 @@ channels:
   - defaults
 
 dependencies:
-  - blazingsql-calcite=0.4.6 
-  - blazingsql-orchestrator=0.4.6 
-  - blazingsql-ral=0.4.6
-  - blazingsql-python=0.4.6
-  - cudatoolkit=10.0
-  - jupyterlab=1.1
+  - blazingsql=0.11
+  - datashader=0.9
+  - ipython-sql=0.3
+  - jupyterlab=1.2
+  - jupyterlab-git=0.9
   - matplotlib=3.1
+  - nodejs=13.0
+  - pip=19.3
+  - pip:
+    - -r file:requirements.txt
   - python=3.7
   - python-flatbuffers=1.11
-  - rapids=0.10
+  - rapids=0.11
