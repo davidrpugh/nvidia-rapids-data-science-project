@@ -1,9 +1,9 @@
 name: null
 
 channels:
+  - blazingsql
   - rapidsai
   - nvidia
-  - blazingsql
   - conda-forge
   - defaults
 
