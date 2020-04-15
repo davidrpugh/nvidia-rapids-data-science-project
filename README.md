@@ -42,13 +42,32 @@ $ conda activate ./env
 Note that the `env` directory is *not* under version control as it can always be re-created from 
 the `environment.yml` file as necessary.
 
+If you wish to make use of the JupyterLab extensions included in the `environment.yml` and the 
+`requirements.txt` files, then you will need to run the `postBuild` script after activating the 
+environment to rebuild the client-side components of the extensions. Note that this step only 
+needs to be done once (unless you add additional JupyterLab extensions).
+
+```bash
+$ conda activate ./env
+(/path/to/project-dir/env)$ . postBuild
+```
+
+For your convenience these commands have been combined in a shell script `./bin/create-conda-env.sh`.
+Running the shell script will create the Conda environment, activate the Conda environment, and build
+JupyterLab with any additional extensions. The script should be run from the project root directory as
+follows.
+
+```bash
+./bin/create-conda-env.sh
+```
+
 ### Updating the Conda environment
 
 If you add (remove) dependencies to (from) the `environment.yml` file after the environment has 
 already been created, then you can update the environment with the following command.
 
 ```bash
-$ conda env update --prefix ./env --file environment.yml --prune
+$ conda env create --prefix ./env --file environment.yml --force
 ```
 
 ### Listing the full contents of the Conda environment
@@ -59,14 +78,25 @@ The list of explicit dependencies for the project are listed in the `environment
 conda list --prefix ./env
 ```
 
-
 ## Installing the JupyterLab extensions
 
-If you wish to make use of the JupyterLab extensions included in the `environment.yml` file, then you will need to run the `postBuild` script after activating the environment to rebuild the client-side components of the extensions. Note that this step only needs to be done once (unless you add additional JupyterLab extensions).
+If you wish to make use of the JupyterLab extensions included in the `environment.yml` file, then you 
+will need to run the `postBuild` script after activating the environment to rebuild the client-side 
+components of the extensions. Note that this step only needs to be done once (unless you add additional 
+JupyterLab extensions).
 
 ```bash
 $ conda activate ./env
 (/path/to/project-dir/env)$ . postBuild
+```
+
+For your convenience these commands have been combined in a shell script `./bin/create-conda-env.sh`. 
+Running the shell script will create the Conda environment, activate the Conda environment, and build 
+JupyterLab with any additional extensions. The script should be run from the project root directory as 
+follows.
+
+```bash
+./bin/create-conda-env.sh # assumes that $CUDA_HOME is set properly
 ```
 
 ## Using Docker
