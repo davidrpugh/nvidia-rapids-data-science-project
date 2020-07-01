@@ -10,12 +10,10 @@ channels:
 dependencies:
   - blazingsql=0.14
   - cudatoolkit=10.1
-#  - jupyterlab=1.2
-#  - jupyterlab-git=0.9
-#  - nbdime=1.1
-#  - nodejs=13
+  - jupyterlab=2.1
+  - jupyterlab-git=0.20
   - pip=20.1
-#  - pip:
-#    - -r file:requirements.txt
+  - pip:
+    - -r file:requirements.txt
   - python=3.7
   - rapids=0.14

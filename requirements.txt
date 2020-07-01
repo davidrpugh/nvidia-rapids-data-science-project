@@ -1,2 +1,2 @@
 dask-labextension==2.0.*
-jupyterlab-nvdashboard==0.2.*
+jupyterlab-nvdashboard==0.3.*
