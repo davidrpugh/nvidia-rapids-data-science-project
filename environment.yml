@@ -8,27 +8,14 @@ channels:
   - defaults
 
 dependencies:
-  - blazingsql=0.13
+  - blazingsql=0.14
   - cudatoolkit=10.1
-  - cudnn=7.6
-  - dask=2.14
-  - datashader=0.10
-  - ipython-sql=0.3
-  - jupyterlab=1.2
-  - jupyterlab-git=0.9
-  - matplotlib=3.2
-  - nbdime=1.1
-  - nodejs=13
-  - numba=0.48
-  - pandas=0.25
-  - panel=0.6
-  - pip=20.0
-  - pip:
-    - -r file:requirements.txt
-  - pyarrow=0.15
+#  - jupyterlab=1.2
+#  - jupyterlab-git=0.9
+#  - nbdime=1.1
+#  - nodejs=13
+  - pip=20.1
+#  - pip:
+#    - -r file:requirements.txt
   - python=3.7
-  - python-flatbuffers=1.11
-  - scikit-image=0.16
-  - scikit-learn=0.22
-  - rapids=0.13
-  - xgboost=1.0
+  - rapids=0.14
