@@ -1,7 +1,9 @@
 #!/bin/bash --login
 
+# entire script fails if a single command fails
+set -e
+
 # create the conda environment
-export ENV_PREFIX=$PWD/env
-conda env create --prefix $ENV_PREFIX --file environment.yml --force
-conda activate $ENV_PREFIX
-. postBuild
+PROJECT_DIR="$PWD"
+ENV_PREFIX="$PROJECT_DIR"/env
+mamba env create --prefix $ENV_PREFIX --file "$PROJECT_DIR"/environment.yml --force

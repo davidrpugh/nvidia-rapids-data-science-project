@@ -1,19 +1,46 @@
-name: null
+name: pytorch-env
 
 channels:
-  - blazingsql
   - rapidsai
   - nvidia
   - conda-forge
   - defaults
 
 dependencies:
-  - blazingsql=0.16
-  - cudatoolkit=11.0
-  - jupyterlab=2.2
-  - jupyterlab-git=0.23
-  - pip=20.2
+  - bokeh
+  - cudatoolkit=11.2
+  - dask
+  - dask-ml
+  - dask-labextension
+  - datashader
+  - gh
+  - git
+  - holoviews
+  - hvplot
+  - ipywidgets
+  - jupyterlab
+  - jupyterlab-git
+  - jupyterlab-nvdashboard
+  - jupyterlab-lsp
+  - matplotlib
+  - numba
+  - numpy
+  - optuna
+  - pandas
+  - panel
+  - pip
   - pip:
     - -r file:requirements.txt
+  - pyarrow
   - python=3.8
-  - rapids=0.16
+  - python-language-server
+  - pyviz_comms
+  - rapids-blazing=21.06
+  - scikit-learn
+  - scipy
+  - ucx
+  - ucx-py
+  - wandb
+  - xarray
+  - xeus-python
+  - xgboost
