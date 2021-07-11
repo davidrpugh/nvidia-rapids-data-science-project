@@ -1,6 +1,6 @@
 # nvidia-rapids-data-science-project
 
-Repository containing scaffolding for a Python 3-based data science project using the [NVIDIA RAPIDS](https://rapids.ai/index.html) libraries. 
+Repository containing scaffolding for a Python 3-based data science project using the [NVIDIA RAPIDS](https://rapids.ai/index.html) libraries.
 
 ## Creating a new project from this template
 
@@ -21,61 +21,100 @@ Project organization is based on ideas from [_Good Enough Practices for Scientif
 9. Put project source code in the `src` directory.
 10. Name all files to reflect their content or function.
 
-## Using Conda
+## Building the Conda environment
 
-### Creating the Conda environment
-
-After adding any necessary dependencies to the Conda `environment.yml` file you can create the 
-environment in a sub-directory of your project directory by running the following command.
+After adding any necessary dependencies that should be downloaded via `conda` to the 
+`environment.yml` file and any dependencies that should be downloaded via `pip` to the 
+`requirements.txt` file you create the Conda environment in a sub-directory `./env`of your project 
+directory by running the following commands.
 
 ```bash
-$ conda env create --prefix ./env --file environment.yml
+export ENV_PREFIX=$PWD/env
+mamba env create --prefix $ENV_PREFIX --file environment.yml --force
 ```
 
 Once the new environment has been created you can activate the environment with the following 
 command.
 
 ```bash
-$ conda activate ./env
+conda activate $ENV_PREFIX
 ```
 
-Note that the `env` directory is *not* under version control as it can always be re-created from 
-the `environment.yml` file as necessary.
+Note that the `ENV_PREFIX` directory is *not* under version control as it can always be re-created as 
+necessary.
 
-If you wish to make use of the JupyterLab extensions included in the `environment.yml` and the 
-`requirements.txt` files, then you will need to run the `postBuild` script after activating the 
-environment to rebuild the client-side components of the extensions. Note that this step only 
-needs to be done once (unless you add additional JupyterLab extensions).
-
-```bash
-$ conda activate ./env
-(/path/to/project-dir/env)$ . postBuild
-```
-
-For your convenience these commands have been combined in a shell script `./bin/create-conda-env.sh`.
-Running the shell script will create the Conda environment, activate the Conda environment, and build
-JupyterLab with any additional extensions. The script should be run from the project root directory as
-follows.
+For your convenience these commands have been combined in a shell script `./bin/create-conda-env.sh`. 
+Running the shell script will create the Conda environment, activate the Conda environment, and build 
+JupyterLab with any additional extensions. The script should be run from the project root directory 
+as follows. 
 
 ```bash
 ./bin/create-conda-env.sh
 ```
 
-### Updating the Conda environment
+### Ibex
 
-If you add (remove) dependencies to (from) the `environment.yml` file after the environment has 
-already been created, then you can update the environment with the following command.
+The most efficient way to build Conda environments on Ibex is to launch the environment creation script 
+as a job on the debug partition via Slurm. For your convenience a Slurm job script 
+`./bin/create-conda-env.sbatch` is included. The script should be run from the project root directory 
+as follows.
 
 ```bash
-$ conda env create --prefix ./env --file environment.yml --force
+sbatch ./bin/create-conda-env.sbatch
 ```
 
 ### Listing the full contents of the Conda environment
 
-The list of explicit dependencies for the project are listed in the `environment.yml` file. To see the full list of packages installed into the environment run the following command.
+The list of explicit dependencies for the project are listed in the `environment.yml` file. To see 
+the full lost of packages installed into the environment run the following command.
 
 ```bash
-conda list --prefix ./env
+conda list --prefix $ENV_PREFIX
+```
+
+### Updating the Conda environment
+
+If you add (remove) dependencies to (from) the `environment.yml` file or the `requirements.txt` file 
+after the environment has already been created, then you can re-create the environment with the 
+following command.
+
+```bash
+$ mamba env create --prefix $ENV_PREFIX --file environment.yml --force
+```
+
+## Installing the NVIDIA CUDA Compiler (NVCC) (Optional)
+
+Installing the NVIDIA CUDA Toolkit manually is only required if your project needs to use the `nvcc` compiler. 
+Note that even if you have not written any custom CUDA code that needs to be compiled with `nvcc`, if your project 
+uses packages that include custom CUDA extensions for PyTorch then you will need `nvcc` installed in order to build these packages.
+
+If you don't need `nvcc`, then you can skip this section as `conda` will install a `cudatoolkit` package 
+which includes all the necessary runtime CUDA dependencies (but not the `nvcc` compiler).
+
+### Workstation
+
+You will need to have the [appropriate version](https://developer.nvidia.com/cuda-toolkit-archive) 
+of the NVIDIA CUDA Toolkit installed on your workstation. If using the most recent versionf of PyTorch, then you 
+should install [NVIDIA CUDA Toolkit 11.2](https://developer.nvidia.com/cuda-11.2.2-download-archive) 
+[(documentation)](https://docs.nvidia.com/cuda/archive/11.2.2/).
+
+After installing the appropriate version of the NVIDIA CUDA Toolkit you will need to set the 
+following environment variables.
+
+```bash
+$ export CUDA_HOME=/usr/local/cuda-11.2
+$ export PATH=$CUDA_HOME/bin:$PATH
+$ export LD_LIBRARY_PATH=$CUDA_HOME/lib64:$LD_LIBRARY_PATH
+```
+
+### Ibex
+
+Ibex users do not neet to install NVIDIA CUDA Toolkit as the relevant versions have already been 
+made available on Ibex by the Ibex Systems team. Users simply need to load the appropriate version 
+using the `module` tool. 
+
+```bash
+$ module load cuda/11.2.2
 ```
 
 ## Using Docker
