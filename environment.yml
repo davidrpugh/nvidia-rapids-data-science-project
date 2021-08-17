@@ -30,7 +30,7 @@ dependencies:
   - panel
   - pip
   - pip:
-    - -r file:requirements.txt
+    - -r requirements.txt
   - pyarrow
   - python=3.8
   - python-language-server
