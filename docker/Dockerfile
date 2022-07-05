@@ -1,4 +1,4 @@
-FROM rapidsai/rapidsai:cuda11.0-base-ubuntu18.04
+FROM rapidsai/rapidsai:cuda11.4-base-ubuntu20.04-py3.9
 
 LABEL maintainer="pughdr <david.pugh@kaust.edu.sa>"
 
