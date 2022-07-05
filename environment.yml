@@ -1,6 +1,7 @@
-name: pytorch-env
+name: rapids-env
 
 channels:
+  - blazingsql
   - rapidsai
   - nvidia
   - conda-forge
@@ -8,10 +9,13 @@ channels:
 
 dependencies:
   - bokeh
-  - cudatoolkit=11.2
+  - blazingsql
+  - cudatoolkit=11.4
+  - cupy
   - dask
-  - dask-ml
   - dask-labextension
+  - dask-ml
+  - dask-sql
   - datashader
   - gh
   - git
@@ -32,10 +36,10 @@ dependencies:
   - pip:
     - -r requirements.txt
   - pyarrow
-  - python=3.8
+  - python=3.9
   - python-language-server
   - pyviz_comms
-  - rapids-blazing=21.06
+  - rapids=22.06
   - scikit-learn
   - scipy
   - ucx
