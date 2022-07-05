@@ -13,7 +13,6 @@ dependencies:
   - dask
   - dask-labextension
   - dask-ml
-  - dask-sql
   - datashader
   - gh
   - git
