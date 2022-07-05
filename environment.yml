@@ -36,7 +36,7 @@ dependencies:
   - pip:
     - -r requirements.txt
   - pyarrow
-  - python=3.9
+  - python=3.8
   - python-language-server
   - pyviz_comms
   - rapids=22.06
