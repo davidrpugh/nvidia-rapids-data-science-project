@@ -8,7 +8,7 @@ channels:
 
 dependencies:
   - bokeh
-  - cudatoolkit=11.5
+  - cudatoolkit=11.4
   - cupy
   - dask
   - dask-labextension
