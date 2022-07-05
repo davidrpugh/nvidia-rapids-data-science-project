@@ -9,7 +9,7 @@ channels:
 
 dependencies:
   - bokeh
-  - blazingsql
+  - blazingsql=21.08
   - cudatoolkit=11.4
   - cupy
   - dask
